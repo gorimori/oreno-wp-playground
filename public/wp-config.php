@@ -1,4 +1,5 @@
 <?php
+
 /**
  * WordPress の基本設定
  *
@@ -26,22 +27,22 @@
 
 // ** MySQL 設定 - この情報はホスティング先から入手してください。 ** //
 /** WordPress のためのデータベース名 */
-define( 'DB_NAME', 'database_name_here' );
+define('DB_NAME', 'oreno-wp-db');
 
 /** MySQL データベースのユーザー名 */
-define( 'DB_USER', 'username_here' );
+define('DB_USER', 'ore');
 
 /** MySQL データベースのパスワード */
-define( 'DB_PASSWORD', 'password_here' );
+define('DB_PASSWORD', 'oreno-wp-password');
 
 /** MySQL のホスト名 */
-define( 'DB_HOST', 'localhost' );
+define('DB_HOST', '0.0.0.0');
 
 /** データベースのテーブルを作成する際のデータベースの文字セット */
-define( 'DB_CHARSET', 'utf8' );
+define('DB_CHARSET', 'utf8');
 
 /** データベースの照合順序 (ほとんどの場合変更する必要はありません) */
-define( 'DB_COLLATE', '' );
+define('DB_COLLATE', '');
 
 /**#@+
  * 認証用ユニークキー
@@ -52,14 +53,14 @@ define( 'DB_COLLATE', '' );
  *
  * @since 2.6.0
  */
-define( 'AUTH_KEY',         'put your unique phrase here' );
-define( 'SECURE_AUTH_KEY',  'put your unique phrase here' );
-define( 'LOGGED_IN_KEY',    'put your unique phrase here' );
-define( 'NONCE_KEY',        'put your unique phrase here' );
-define( 'AUTH_SALT',        'put your unique phrase here' );
-define( 'SECURE_AUTH_SALT', 'put your unique phrase here' );
-define( 'LOGGED_IN_SALT',   'put your unique phrase here' );
-define( 'NONCE_SALT',       'put your unique phrase here' );
+define('AUTH_KEY',         '`r#LZ6M6!2a_Lse.mKgY0,f|%,NlW,QoQi_xh/-N+E R|+{h~-3JVJ6#xnH4~0h4');
+define('SECURE_AUTH_KEY',  'HBY*fm?2Ig]QS^FvkXKkZW0-%S$O1b/;~Z+|f9fIfoogo;zj&;aB;$o,Q(dqq@^T');
+define('LOGGED_IN_KEY',    'ZYK=~*a}cnBs)cQoy&]E0j{!X@,BrTy<>YJE>4,bfmFb[A):+[^i@fF6KnLs?2<1');
+define('NONCE_KEY',        'v;ZGW&*+pKSfHeS,Rq[LCGoQ=/)o~$5bPj|#.@>l VX,%v6UT:taLL!0{%xV/4(Q');
+define('AUTH_SALT',        'NrR]+bZG@B4lJn5fWM_1eK*3m.#J O_T<Os_^#9WH4U}:;-N% ,<&`gd?:OKz<q^');
+define('SECURE_AUTH_SALT', '{2YV~4*SVj[?dOO(dVJr EEpB]ezH3]7.H)]4b.*E AU1LoL[O,rl[[s6b$im-Sc');
+define('LOGGED_IN_SALT',   'aL1rG7 <,i4Z3dq7i:xJL;xD:)Aads-`5t(ih#&G.TS0j=may_,vJ``g+Xt`FE+/');
+define('NONCE_SALT',       'S =8Q(xZUtmcs .3Wxl7uLd6E~@(H(t=G|8}R+c0K9P~A@*Z+>je`2^4H5Nme-^m');
 
 /**#@-*/
 
@@ -81,14 +82,14 @@ $table_prefix = 'wp_';
  *
  * @link http://wpdocs.osdn.jp/WordPress%E3%81%A7%E3%81%AE%E3%83%87%E3%83%90%E3%83%83%E3%82%B0
  */
-define( 'WP_DEBUG', false );
+define('WP_DEBUG', true);
 
 /* 編集が必要なのはここまでです ! WordPress でのパブリッシングをお楽しみください。 */
 
 /** Absolute path to the WordPress directory. */
-if ( ! defined( 'ABSPATH' ) ) {
-	define( 'ABSPATH', dirname( __FILE__ ) . '/' );
+if (!defined('ABSPATH')) {
+	define('ABSPATH', dirname(__FILE__) . '/');
 }
 
 /** Sets up WordPress vars and included files. */
-require_once( ABSPATH . 'wp-settings.php' );
+require_once(ABSPATH . 'wp-settings.php');
