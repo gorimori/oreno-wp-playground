@@ -1,0 +1,30 @@
+{
+  "name": "oreno-wp-playground",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gorimori/oreno-wp-playground.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gorimori/oreno-wp-playground/issues"
+  },
+  "homepage": "https://github.com/gorimori/oreno-wp-playground#readme",
+  "devDependencies": {
+    "@types/webpack": "^4.41.6",
+    "@wordpress/babel-preset-default": "^4.10.0",
+    "babel-loader": "^8.0.6",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.2",
+    "webpack": "^4.41.6",
+    "webpack-cli": "^3.3.11"
+  }
+}
