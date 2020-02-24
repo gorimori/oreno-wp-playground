@@ -1,10 +1,12 @@
 // @ts-check
-import * as path from 'path';
+const path = require('path');
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
+  mode: 'production',
   entry: {
-    main: ''
+    h2: path.resolve('src', 'blocks', 'h2', 'index.tsx')
   },
   output: {
     filename: '[name]/index.js',
@@ -13,17 +15,16 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.[tj]sx?$/,
         use: [
           {
             loader: 'babel-loader',
             options: { presets: ['@wordpress/default'] }
           },
-          {
-            loader: 'ts-loader'
-          }
+          { loader: 'ts-loader' }
         ]
       }
     ]
-  }
+  },
+  plugins: [new DependencyExtractionWebpackPlugin()]
 };
