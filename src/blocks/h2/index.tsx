@@ -1,22 +1,29 @@
 import { registerBlockType } from '@wordpress/blocks';
-
-const blockStyle = {
-  backgroundColor: '#900',
-  color: '#fff',
-  padding: '20px'
-};
+import React from 'react';
 
 registerBlockType('gutenberg-examples/example-01-basic-esnext', {
   title: 'Example: Basic (esnext)',
   icon: 'universal-access-alt',
   category: 'layout',
   example: {},
-  edit() {
-    return <div style={blockStyle}>Hello World, step 1 (from the editor).</div>;
+  attributes: {
+    content: { type: 'string', source: 'text', selector: 'p' }
   },
-  save() {
+  edit({ attributes, setAttributes }) {
+    const { content } = attributes;
+    const changeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+      setAttributes({ content: e.target.value });
+    };
     return (
-      <div style={blockStyle}>Hello World, step 1 (from the frontend).</div>
+      <>
+        <label>
+          見出し
+          <input type="text" value={content} onChange={changeHandler} />
+        </label>
+      </>
     );
+  },
+  save(props: any) {
+    return <p>{props.attributes.content}</p>;
   }
 });
